@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
 from app.api.endpoints import blogs
+from app.api.endpoints import upload_api
 from app.db import Base, engine, metadata, database
 
 Base.metadata.create_all(engine)
@@ -36,3 +37,4 @@ def read_root():
     return {"This is Python FastAPI blog application"}
 
 app.include_router(blogs.router, prefix="/api/blogs", tags=["blogs"])
+app.include_router(upload_api.router, prefix="/api/uploads", tags=["uploads"])
