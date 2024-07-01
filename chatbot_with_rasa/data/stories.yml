@@ -1,0 +1,12 @@
+version: "3.1"
+
+stories:
+- story: greet path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interview path
+  steps:
+  - intent: interview
+  - action: utter_interview
