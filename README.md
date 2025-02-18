@@ -1,0 +1,2 @@
+run python code with curl cmd 
+python curl_process_with_reponse.py "curl --location 'https://api.test.virendra/token' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'client_id=vvvvvvvvv' --data-urlencode 'client_secret=vvvvvvv' --data-urlencode 'type=Bearer Token' --data-urlencode 'Scope=ssssss/.default' --data-urlencode 'grant_type=client_credentials' --data-urlencode 'expires=1/29/27'"
