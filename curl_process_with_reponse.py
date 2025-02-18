@@ -63,24 +63,26 @@ def call_api(url, method, headers, data):
 
 def main():
     parser = argparse.ArgumentParser(description="Parse cURL and send HTTP request")
-    parser.add_argument("curl_command", type=str, help="The cURL command")
+    parser.add_argument("curl_commands", type=str, nargs="+", help="List of cURL commands")
     args = parser.parse_args()
 
-    parsed = parse_curl(args.curl_command)
+    for curl_command in args.curl_commands:
+        print(f"\nProcessing cURL command: {curl_command}")
+        parsed = parse_curl(curl_command)
 
-    print("\nParsed Information:")
-    print(f"URL: {parsed['url']}")
-    print(f"Method: {parsed['method']}")
-    print(f"Headers: {parsed['headers']}")
-    print(f"Form Data: {parsed['data']}")
+        print("\nParsed Information:")
+        print(f"URL: {parsed['url']}")
+        print(f"Method: {parsed['method']}")
+        print(f"Headers: {parsed['headers']}")
+        print(f"Form Data: {parsed['data']}")
 
-    print("\nCalling API...")
-    try:
-        response = call_api(parsed["url"], parsed["method"], parsed["headers"], parsed["data"])
-        print("\nAPI Response:")
-        print(response)
-    except Exception as e:
-        print(f"Error calling API: {e}")
+        print("\nCalling API...")
+        try:
+            response = call_api(parsed["url"], parsed["method"], parsed["headers"], parsed["data"])
+            print("\nAPI Response:")
+            print(response)
+        except Exception as e:
+            print(f"Error calling API: {e}")
 
 if __name__ == "__main__":
     main()
