@@ -1,0 +1,9 @@
+{
+  "tableName": "employees",
+  "columns": [
+    {"name": "id", "type": "INT"},
+    {"name": "name", "type": "STRING"},
+    {"name": "salary", "type": "FLOAT"},
+    {"name": "joining_date", "type": "DATE"}
+  ]
+}

@@ -1,0 +1,24 @@
+[project]
+name = "databricks-poetry-poc"
+version = "0.1.0"
+description = "Create Databricks tables using JSON mapping"
+authors = [
+    { name = "virendra-kashyap", email = "virendrakashyap244@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "pyspark>=3.3.0",
+    "typer[all]>=0.9.0",
+    "mysql-connector-python (>=8.0.31,<10.0.0)"
+]
+
+[tool.poetry]
+packages = [
+    { include = "databricks_poetry_poc", from = "src" }
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

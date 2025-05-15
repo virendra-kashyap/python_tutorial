@@ -1,0 +1,9 @@
+{
+  "table_name": "employee",
+  "columns": [
+    { "name": "id", "type": "INT PRIMARY KEY AUTO_INCREMENT" },
+    { "name": "name", "type": "VARCHAR(255)" },
+    { "name": "email", "type": "VARCHAR(255)" },
+    { "name": "created_at", "type": "DATETIME" }
+  ]
+}
